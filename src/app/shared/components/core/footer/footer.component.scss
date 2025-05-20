@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+button {
+  width: 198px;
+  height: 35px;
+  border-radius: 4px;
+  background-color: var(--app-blue-600);
+  color: var(--app-neutral-000);
+
+  border: none;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--app-blue-500);
+  }
+}

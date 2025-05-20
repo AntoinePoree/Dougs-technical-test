@@ -1,0 +1,114 @@
+$spacing: (0, 2, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64, 72, 80);
+
+@each $i in $spacing {
+  .radius-#{$i} {
+    border-radius: #{$i}px !important;
+  }
+  .radius-top-left#{$i} {
+    border-top-left-radius: #{$i}px !important;
+  }
+  .radius-top-right#{$i} {
+    border-top-right-radius: #{$i}px !important;
+  }
+  .radius-bottom-left#{$i} {
+    border-bottom-left-radius: #{$i}px !important;
+  }
+  .radius-bottom-right#{$i} {
+    border-bottom-right-radius: #{$i}px !important;
+  }
+
+  .margin-#{$i} {
+    margin: #{$i}px !important;
+  }
+  .mt-#{$i} {
+    margin-top: #{$i}px !important;
+  }
+  .mb-#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+  .ml-#{$i} {
+    margin-left: #{$i}px !important;
+  }
+  .mr-#{$i} {
+    margin-right: #{$i}px !important;
+  }
+  .mx-#{$i} {
+    margin-left: #{$i}px !important;
+    margin-right: #{$i}px !important;
+  }
+  .my-#{$i} {
+    margin-top: #{$i}px !important;
+    margin-bottom: #{$i}px !important;
+  }
+
+  .padding-#{$i} {
+    padding: #{$i}px !important;
+  }
+  .pt-#{$i} {
+    padding-top: #{$i}px !important;
+  }
+  .pb-#{$i} {
+    padding-bottom: #{$i}px !important;
+  }
+  .pl-#{$i} {
+    padding-left: #{$i}px !important;
+  }
+  .pr-#{$i} {
+    padding-right: #{$i}px !important;
+  }
+  .px-#{$i} {
+    padding-left: #{$i}px !important;
+    padding-right: #{$i}px !important;
+  }
+  .py-#{$i} {
+    padding-top: #{$i}px !important;
+    padding-bottom: #{$i}px !important;
+  }
+}
+
+@for $i from 0 through 150 {
+  .height-#{$i} {
+    height: #{$i}px !important;
+  }
+}
+
+.bold {
+  font-weight: bold !important;
+}
+
+.center {
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-start {
+  text-align: start;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+.cursor {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  // padding: 0 1rem;
+  padding: 1rem 7.5rem;
+
+  @media (max-width: 1024px) {
+    padding: 1rem 2rem;
+  }
+  @media (max-width: 600px) {
+    padding: 1rem 0.5rem;
+  }
+}

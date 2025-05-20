@@ -1,0 +1,12 @@
+<button
+  class="app-button"
+  [class.selected]="selected"
+  [class.disabled]="disabled"
+  (click)="onClick()"
+  [disabled]="disabled"
+>
+  <ng-container *ngIf="icon">
+    <i [class]="icon" class="app-button__icon"></i>
+  </ng-container>
+  <span class="app-button__text">{{ text }}</span>
+</button>

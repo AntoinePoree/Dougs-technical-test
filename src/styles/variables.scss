@@ -1,0 +1,60 @@
+:root {
+  // Colors Palettes
+  --app-neutral-900: #222222;
+  --app-neutral-800: #343a40;
+  --app-neutral-700: #495057;
+  --app-neutral-600: #6c757d;
+  --app-neutral-500: #adb5bd;
+  --app-neutral-400: #ced4da;
+  --app-neutral-300: #dee2e6;
+  --app-neutral-200: #F3F5F8;
+  --app-neutral-100: #f8f9fa;
+  --app-neutral-000: #ffffff;
+
+  --app-red-900: #c63817;
+  --app-red-800: #df4420;
+  --app-red-700: #ed4b24;
+  --app-red-600: #fc5229;
+  --app-red-500: #ff582d;
+  --app-red-400: #ff724b;
+  --app-red-300: #ff8c6b;
+  --app-red-200: #ffad96;
+  --app-red-100: #ffcdbf;
+  --app-red-50: #fceae8;
+
+  // For ur example, we need only 2 blue colors
+  --app-blue-600: #11ABEC;
+  --app-blue-500: #6cc8f0;
+  --app-blue-100: #F1F7FC;
+
+  --app-yellow-900: #e67d01;
+  --app-yellow-800: #eaa31a;
+  --app-yellow-700: #ecbc25;
+  --app-yellow-600: #edd430;
+  --app-yellow-500: #ebe435;
+  --app-yellow-400: #efe954;
+  --app-yellow-300: #f2ed74;
+  --app-yellow-200: #f5f29b;
+  --app-yellow-100: #f9f7c3;
+  --app-yellow-50: #fcfce7;
+
+  --app-error: var(--app-red-900);
+  --app-success: var(--app-green-900);
+  --app-warning: var(--app-yellow-800);
+  --app-background: var(--app-neutral-200);
+  // Spacing
+  --spacing-00: 0rem; // 0px
+  --spacing-01: 0.13rem; // 2px
+  --spacing-02: 0.25rem; // 4px
+  --spacing-03: 0.5rem; // 8px
+  --spacing-04: 0.75rem; // 12px
+  --spacing-05: 1rem; // 16px
+  --spacing-06: 1.5rem; // 24px
+  --spacing-07: 2rem; // 32px
+  --spacing-08: 2.5rem; // 40px
+  --spacing-09: 3rem; // 48px
+  --spacing-10: 3.5rem; // 56px
+  --spacing-11: 4rem; // 64px
+  --spacing-12: 4.5rem; // 72px
+  --spacing-13: 5rem; // 80px
+}

@@ -1,0 +1,570 @@
+{
+  // Formatte automatiquement le code à la sauvegarde
+  "editor.formatOnSave": true,
+  // Réduit la taille que prends un onglet
+  "window.density.editorTabHeight": "compact",
+  // Favorise les suggestions de code plus proche du fichier courant lors de la proposition CTRL + Espace
+  "editor.suggest.localityBonus": true,
+  // Prends en compte l'historique d'édition lors de la proposition CTRL + Espace
+  "workbench.editor.preferHistoryBasedLanguageDetection": true,
+  "editor.formatOnType": true, // required
+  "editor.formatOnPaste": true, // optional
+  "typescript.autoClosingTags": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.cursorBlinking": "expand",
+  // === DEBUT ESLINT ===
+  // https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+  // Formattage du code par l'extension Eslint
+  // - Retire automatiquement les imports non utilisés
+  // - Formate le code
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit",
+      "source.removeUnused.ts": "never",
+      "source.sortImports": "always",
+    },
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.configPath": "./.prettierrc",
+  "json.validate.enable": true,
+  // === FIN PRETTIER ESLINT ===
+  // === DEBUT ESLINT ===
+  "eslint.validate": [
+    "typescript"
+  ],
+  "eslint.useFlatConfig": true,
+  "eslint.options": {
+    "overrideConfigFile": "eslint.config.js",
+    "cache": true
+  },
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  // === FIN ESLINT ===
+  // === DEBUT STYLELINT ===
+  // https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint
+  // Souligne les erreurs de style coté CSS, la configuration est dans le fichier .stylelintrc.json à la racine du projet
+  "stylelint.validate": [
+    "css",
+    "scss"
+  ],
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  // === FIN STYLELINT ===
+  // === DEBUT CONSOLE NINJA ===
+  // Utilise la version gratuite de Console Ninja
+  "console-ninja.featureSet": "Community",
+  // === FIN CONSOLE NINJA ===
+  // === DEBUT INDENT RAINBOW ===
+  // Colore les indentations de couleur differente en fonction de la profondeur de l'indentation
+  // Les couleurs sont dans l'ordre de profondeur, le dernier chiffre dans rgba correspond à la transparence de la couleur
+  "indentRainbow.colors": [
+    "rgba(255,255,64,0.15)",
+    "rgba(127,255,127,0.15)",
+    "rgba(255,127,255,0.15)",
+    "rgba(79,236,236,0.15)"
+  ],
+  // Colore les erreurs d'indentation
+  "indentRainbow.errorColor": "rgba(128,32,32,0.05)",
+  // Colore le mélange de tabulation et d'espace
+  "indentRainbow.tabmixColor": "rgba(128,32,96,0.6)",
+  // Attends 200ms avant de changer les couleurs
+  "indentRainbow.updateDelay": 200,
+  // === FIN INDENT RAINBOW ===
+  // Active la détection de jonction des accolades
+  "editor.guides.bracketPairs": true,
+  // Active la détection de jonction des accolades sur une même ligne
+  "editor.guides.bracketPairsHorizontal": true,
+  // Colore de la même couleur les accolades de englobant le même code
+  "editor.bracketPairColorization.enabled": true,
+  // Met en surbrillance les accolades les plus proches de la position du curseur
+  "editor.guides.highlightActiveBracketPair": true,
+  // Active la détection de l'indentation
+  "editor.guides.indentation": true,
+  // Met en surbrillance les indentations les plus proches de la position du curseur
+  "editor.guides.highlightActiveIndentation": true,
+  // Ajoute des paramètres par défaut pour les nouveaux composants
+  "angular-cli.component.options": "--change-detection=OnPush --standalone --style=scss --skip-tests",
+  // Ajoute des paramètres par défaut pour les nouveaux services
+  "angular-cli.service.options": "--flat --skip-tests",
+  // Ajoute des paramètres par défaut pour les nouveaux pipes
+  "angular-cli.pipe.options": "--flat --skip-import --skip-tests --standalone",
+  // Ajoute des paramètres par défaut pour les nouveaux directives
+  "angular-cli.directive.options": "--flat --skip-import --skip-tests --standalone",
+  // Ajoute des paramètres par défaut pour les nouveaux modules
+  "angular-cli.module.options": "--flat --routing",
+  // === DEBUT MATERIAL ICONS ===
+  // https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme
+  // Change les icones des fichiers et dossiers dans l'explorateur de fichiers
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.activeIconPack": "angular",
+  "material-icon-theme.files.associations": {
+    "*.store.ts": "ngrx-selectors",
+    "*.ui-store.ts": "ngrx-state",
+    "*.config.ts": "conduct",
+    "*.model.ts": "log",
+    "*.enum.ts": "lib",
+    "*.constant.ts": "table",
+    "public-api.ts": "purescript",
+    "*.util.ts": "hardhat",
+    "*.mock.ts": "jest"
+  },
+  "material-icon-theme.folders.associations": {
+    "ui": "views",
+    "accueil-tableau-de-bord": "context",
+    "edition-liste-travaux": "pdf",
+    "honoraires-liste": "enum",
+    "honoraires-liste-conventions": "enum",
+    "intervenants-liste": "dist",
+    "planification-planning-equipes": "update",
+    "planification-tableau-de-roulement": "update",
+    "planification-tournee": "update",
+    "parametres-association": "config",
+    "parametres-comptable": "config",
+    "parametres-etablissement": "config",
+    "parametres-federation": "config",
+    "parametres-listes": "config",
+    "parametres-utilisateurs": "config",
+    "usagers-detail": "admin",
+    "usagers-liste": "admin",
+  },
+  // === FIN MATERIAL ICONS ===
+  // === DEBUT VS CODE ANGULAR HTML ===
+  // https://marketplace.visualstudio.com/items?itemName=ghaschel.vscode-angular-html
+  // Colore les tags/attributs HTML + ceux qui sont spécifiques à Angular
+  "vscode-angular-html.angularAndAngularMaterialElementTags": "#82AAFF",
+  "vscode-angular-html.angularAnimationTriggerPrefix": "#5CA7E4",
+  "vscode-angular-html.angularAnimationTriggerVariableName": "#F78C6C",
+  "vscode-angular-html.angularBindingAttributeDelimiter": "#5CA7E4",
+  "vscode-angular-html.angularEventHandlerName": "#F78C6C",
+  "vscode-angular-html.angularExpression": "#5CA7E4",
+  "vscode-angular-html.angularExpressionOperatorsAndNavigatorsColor": "#011627",
+  "vscode-angular-html.angularOneWayBindingAnimationTriggerDecorator": "#82AAFF",
+  "vscode-angular-html.angularOneWayBindingFirstLevelDepth": "#F78C6C",
+  "vscode-angular-html.angularOneWayBindingSecondLevelDepth": "#011627",
+  "vscode-angular-html.angularOneWayBindingThirdLevelDepth": "#82AAFF",
+  "vscode-angular-html.angularPrefixedAttributesLetPrefix": "#7FDBCA",
+  "vscode-angular-html.angularPrefixedAttributesRefPrefix": "#5CA7E4",
+  "vscode-angular-html.angularPrefixedAttributesRxjsSuffix": "#82AAFF",
+  "vscode-angular-html.angularPrefixedAttributesVariableName": "#C5E478",
+  "vscode-angular-html.angularSyntaxSugarAttributesName": "#F78C6C",
+  "vscode-angular-html.angularSyntaxSugarAttributesPrefix": "#5CA7E4",
+  "vscode-angular-html.angularTemplateVariableName": "#F78C6C",
+  "vscode-angular-html.angularTemplateVariablePrefix": "#5CA7E4",
+  "vscode-angular-html.controlFlowPrefix": "#5CA7E4",
+  "vscode-angular-html.controlFlowKeyword": "#F78C6C",
+  "vscode-angular-html.dtdDoctypeElement": "#82AAFF",
+  "vscode-angular-html.dtdDoctypeExclamation": "#011627",
+  "vscode-angular-html.dtdDoctypeQualifier": "#CAECE6",
+  "vscode-angular-html.dtdDoctypeQuantifier": "#5CA7E4",
+  "vscode-angular-html.htmlAttributeValueSeparator": "#82AAFF",
+  "vscode-angular-html.htmlCustomTags": "#CAECE6",
+  "vscode-angular-html.htmlDoctypeAttributes": "#C5E478",
+  "vscode-angular-html.htmlDoctypeElement": "#82AAFF",
+  "vscode-angular-html.htmlDoctypeExclamation": "#011627",
+  "vscode-angular-html.htmlEntitiesAmpersand": "#011627",
+  "vscode-angular-html.htmlEntitiesSemicolon": "#011627",
+  "vscode-angular-html.htmlEventsAttributes": "#C5E478",
+  "vscode-angular-html.htmlGenericAttributesFollowedByParameter": "#C5E478",
+  "vscode-angular-html.htmlScriptAttributesLanguageIdentifier": "#F78C6C",
+  "vscode-angular-html.htmlLinkAttributesMimeType": "#F78C6C",
+  "vscode-angular-html.htmlStyleAttributesLanguageIdentifier": "#F78C6C",
+  "vscode-angular-html.htmlTags": "#CAECE6",
+  "vscode-angular-html.primeNgElementTags": "#82AAFF",
+  "vscode-angular-html.ngBootstrapElementTags": "#82AAFF",
+  "vscode-angular-html.kendoUiElementTags": "#82AAFF",
+  "vscode-angular-html.svgDAttributePathCommands": "#011627",
+  "vscode-angular-html.svgTags": "#CAECE6",
+  "vscode-angular-html.ariaAttributePrefix": "#7FDBCA",
+  "vscode-angular-html.ariaAttributeSuffix": "#C5E478",
+  "vscode-angular-html.dataAttributePrefix": "#F78C6C",
+  "vscode-angular-html.dataAttributeSuffix": "#C5E478",
+  "vscode-angular-html.xmlAttributeNamespaceDivider": "#5CA7E4",
+  "vscode-angular-html.xmlAttributeNamespaceSuffix": "#011627",
+  "vscode-angular-html.xmlStylesheetAttributesLanguageIdentifier": "#F78C6C",
+  "vscode-angular-html.xmlTagNamespaceDivider": "#5CA7E4",
+  "vscode-angular-html.xmlTagNamespaceSuffix": "#011627",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "html-template.tag.html",
+        "settings": {
+          "foreground": "#CAECE6"
+        }
+      },
+      {
+        "scope": "html-template.tag.custom",
+        "settings": {
+          "foreground": "#CAECE6"
+        }
+      },
+      {
+        "scope": "html-template.ng.attribute.doctype",
+        "settings": {
+          "foreground": "#C5E478"
+        }
+      },
+      {
+        "scope": "html-template.ng.exclamation.doctype",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "html-template.ng.doctype",
+        "settings": {
+          "foreground": "#82AAFF"
+        }
+      },
+      {
+        "scope": "html-template.ng.entities.ampersand",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "html-template.ng.entities.semicolon",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "html-template.ng.attributes.generic",
+        "settings": {
+          "foreground": "#C5E478"
+        }
+      },
+      {
+        "scope": "html-template.ng.attributes.events",
+        "settings": {
+          "foreground": "#C5E478"
+        }
+      },
+      {
+        "scope": "punctuation.separator.key-value.html-template.ng",
+        "settings": {
+          "foreground": "#82AAFF"
+        }
+      },
+      {
+        "scope": "html-template.ng.style.language.identifier",
+        "settings": {
+          "foreground": "#F78C6C"
+        }
+      },
+      {
+        "scope": "html-template.ng.script.language.identifier",
+        "settings": {
+          "foreground": "#F78C6C"
+        }
+      },
+      {
+        "scope": "html-template.ng.link.myme-type",
+        "settings": {
+          "foreground": "#F78C6C"
+        }
+      },
+      {
+        "scope": "html-template.ng.aria-attribute.prefix",
+        "settings": {
+          "foreground": "#7FDBCA"
+        }
+      },
+      {
+        "scope": "html-template.ng.aria-attribute.suffix",
+        "settings": {
+          "foreground": "#C5E478"
+        }
+      },
+      {
+        "scope": "html-template.ng.data-attribute.prefix",
+        "settings": {
+          "foreground": "#F78C6C"
+        }
+      },
+      {
+        "scope": "html-template.ng.data-attribute.suffix",
+        "settings": {
+          "foreground": "#C5E478"
+        }
+      },
+      {
+        "scope": "html-template.ng.interpolation.begin",
+        "settings": {
+          "foreground": "#5CA7E4"
+        }
+      },
+      {
+        "scope": "html-template.ng.interpolation.end",
+        "settings": {
+          "foreground": "#5CA7E4"
+        }
+      },
+      {
+        "scope": "html-template.ng.expression.operator.logical",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "html-template.ng.expression.operator.compound",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "html-template.ng.expression.operator.bitwise",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "html-template.ng.expression.operator.comparison",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "html-template.ng.expression.operator.relational",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "html-template.ng.expression.operator.arithmetic",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "html-template.ng.expression.operator.navigator",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "entity.name.tag.html.ng",
+        "settings": {
+          "foreground": "#82AAFF"
+        }
+      },
+      {
+        "scope": "html-template.ng.attributes.animationtrigger.prefix",
+        "settings": {
+          "foreground": "#5CA7E4"
+        }
+      },
+      {
+        "scope": "html-template.ng.attributes.animationtrigger.variable",
+        "settings": {
+          "foreground": "#F78C6C"
+        }
+      },
+      {
+        "scope": "punctuation.definition.ng-binding-name.begin.html",
+        "settings": {
+          "foreground": "#5CA7E4"
+        }
+      },
+      {
+        "scope": "punctuation.definition.ng-binding-name.end.html",
+        "settings": {
+          "foreground": "#5CA7E4"
+        }
+      },
+      {
+        "scope": "html-template.ng.attributes.event-handler",
+        "settings": {
+          "foreground": "#F78C6C"
+        }
+      },
+      {
+        "scope": "html-template.ng.attributes.input-binding.animationTrigger.prefix",
+        "settings": {
+          "foreground": "#82AAFF"
+        }
+      },
+      {
+        "scope": "html-template.ng.attributes.input-binding.first-level",
+        "settings": {
+          "foreground": "#F78C6C"
+        }
+      },
+      {
+        "scope": "html-template.ng.attributes.input-binding.second-level",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "html-template.ng.attributes.input-binding.third-level",
+        "settings": {
+          "foreground": "#82AAFF"
+        }
+      },
+      {
+        "scope": "html-template.ng.attributes.prefix.let",
+        "settings": {
+          "foreground": "#7FDBCA"
+        }
+      },
+      {
+        "scope": "html-template.ng.attributes.prefix.ref",
+        "settings": {
+          "foreground": "#5CA7E4"
+        }
+      },
+      {
+        "scope": "html-template.ng.attributes.suffix.name",
+        "settings": {
+          "foreground": "#C5E478"
+        }
+      },
+      {
+        "scope": "html-template.ng.attributes.suffix.rxjs",
+        "settings": {
+          "foreground": "#82AAFF"
+        }
+      },
+      {
+        "scope": "html-template.ng.attributes.prefix.sugar",
+        "settings": {
+          "foreground": "#5CA7E4"
+        }
+      },
+      {
+        "scope": "html-template.ng.attributes.suffix.sugar",
+        "settings": {
+          "foreground": "#F78C6C"
+        }
+      },
+      {
+        "scope": "html-template.ng.attributes.template.prefix",
+        "settings": {
+          "foreground": "#5CA7E4"
+        }
+      },
+      {
+        "scope": "html-template.ng.attributes.template.variable",
+        "settings": {
+          "foreground": "#F78C6C"
+        }
+      },
+      {
+        "scope": "html-template.ng.control-flow.prefix",
+        "settings": {
+          "foreground": "#5CA7E4"
+        }
+      },
+      {
+        "scope": "html-template.ng.control-flow.keyword",
+        "settings": {
+          "foreground": "#F78C6C"
+        }
+      },
+      {
+        "scope": "entity.name.tag.html.primeng",
+        "settings": {
+          "foreground": "#82AAFF"
+        }
+      },
+      {
+        "scope": "entity.name.tag.html.ng-bootstrap",
+        "settings": {
+          "foreground": "#82AAFF"
+        }
+      },
+      {
+        "scope": "entity.name.tag.html.kendo",
+        "settings": {
+          "foreground": "#82AAFF"
+        }
+      },
+      {
+        "scope": "html-template.tag.svg",
+        "settings": {
+          "foreground": "#CAECE6"
+        }
+      },
+      {
+        "scope": "html-template.ng.svg.path.commands",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "html-template.ng.tag.colon",
+        "settings": {
+          "foreground": "#5CA7E4"
+        }
+      },
+      {
+        "scope": "html-template.ng.tag.suffix",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "html-template.ng.attributes.colon",
+        "settings": {
+          "foreground": "#5CA7E4"
+        }
+      },
+      {
+        "scope": "html-template.ng.attributes.suffix",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "html-template.ng.xmlStylesheet.language.identifier",
+        "settings": {
+          "foreground": "#F78C6C"
+        }
+      },
+      {
+        "scope": "html-template.ng.exclamation.dtd",
+        "settings": {
+          "foreground": "#FFFF00"
+        }
+      },
+      {
+        "scope": "html-template.ng.dtd",
+        "settings": {
+          "foreground": "#82AAFF"
+        }
+      },
+      {
+        "scope": "html-template.ng.qualifier.dtd",
+        "settings": {
+          "foreground": "#CAECE6"
+        }
+      },
+      {
+        "scope": "html-template.ng.occurrence.dtd",
+        "settings": {
+          "foreground": "#5CA7E4"
+        }
+      }
+    ]
+  },
+  "vscode-angular-html.colorCustomizations": true
+  // === FIN VSCODE ANGULAR HTML ===
+}

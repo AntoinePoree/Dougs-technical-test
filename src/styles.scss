@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+@use './styles/index.scss';
+@import url(https://db.onlinewebfonts.com/c/b158925a1d762313849f2482a415369d?family=Eina03-SemiBold);
+
+@font-face {
+    font-family: "Eina03-SemiBold";
+    src: url("https://db.onlinewebfonts.com/t/b158925a1d762313849f2482a415369d.eot");
+    src: url("https://db.onlinewebfonts.com/t/b158925a1d762313849f2482a415369d.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/b158925a1d762313849f2482a415369d.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/b158925a1d762313849f2482a415369d.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/b158925a1d762313849f2482a415369d.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/b158925a1d762313849f2482a415369d.svg#Eina03-SemiBold")format("svg");
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea, select {
+  font-family: "Eina03-SemiBold";
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+app-navbar {
+  flex-shrink: 0;
+}
+
+.main-content {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+app-footer {
+  flex-shrink: 0;
+}
