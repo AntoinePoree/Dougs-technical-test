@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { ICategory } from '../../interfaces/category.interface';
 
 @Component({
   selector: 'app-category-item',
@@ -7,6 +8,5 @@ import { Component } from '@angular/core';
   standalone: true,
 })
 export class CategoryItemComponent {
-
-
+  public category = input<ICategory | null>(null);
 }

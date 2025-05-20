@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-select',
-  standalone: true,
-  imports: [],
-  templateUrl: './select.component.html',
-  styleUrl: './select.component.scss'
+    selector: 'app-select',
+    imports: [],
+    templateUrl: './select.component.html',
+    styleUrl: './select.component.scss'
 })
 export class SelectComponent {
 

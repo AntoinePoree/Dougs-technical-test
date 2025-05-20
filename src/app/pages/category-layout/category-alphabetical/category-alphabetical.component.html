@@ -1,1 +1,7 @@
-<p>category-alphabetical works!</p>
+@let category = categoryService.categoryMixed();
+
+<section class="category-alphabetical">
+  @for (item of category; track item.id) {
+    <app-category-item [category]="item" />
+  }
+</section>

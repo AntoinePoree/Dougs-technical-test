@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
-
+import { Component, inject } from '@angular/core';
+import { CategoryItemComponent } from '../../../shared/components/category-item/category-item.component';
+import { CategoryService } from '../../../shared/services/category.service';
 @Component({
   selector: 'app-category-alphabetical',
+  imports: [CategoryItemComponent],
   standalone: true,
-  imports: [],
   templateUrl: './category-alphabetical.component.html',
-  styleUrl: './category-alphabetical.component.scss'
+  styleUrl: './category-alphabetical.component.scss',
 })
 export class CategoryAlphabeticalComponent {
-
+  public categoryService = inject(CategoryService);
 }

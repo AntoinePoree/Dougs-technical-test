@@ -6,7 +6,7 @@
   --app-neutral-600: #6c757d;
   --app-neutral-500: #adb5bd;
   --app-neutral-400: #ced4da;
-  --app-neutral-300: #dee2e6;
+  --app-neutral-300: #DCE4ED;
   --app-neutral-200: #F3F5F8;
   --app-neutral-100: #f8f9fa;
   --app-neutral-000: #ffffff;
@@ -42,6 +42,7 @@
   --app-success: var(--app-green-900);
   --app-warning: var(--app-yellow-800);
   --app-background: var(--app-neutral-200);
+  --app-border-color: var(--app-neutral-300);
   // Spacing
   --spacing-00: 0rem; // 0px
   --spacing-01: 0.13rem; // 2px

@@ -4,10 +4,9 @@ import { FooterComponent } from './shared/components/core/footer/footer.componen
 import { NavbarComponent } from './shared/components/core/navbar/navbar.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, NavbarComponent, FooterComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+    selector: 'app-root',
+    imports: [RouterOutlet, NavbarComponent, FooterComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent {}

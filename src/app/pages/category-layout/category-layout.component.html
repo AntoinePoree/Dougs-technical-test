@@ -1,3 +1,13 @@
 <div class="container">
-  <router-outlet />
+  <div class="card">
+    <section class="card-header">
+      <input type="text" placeholder="Rechercher une catégorie" />
+      <select>
+        <option value="all">Tous les groupes de catégories</option>
+        <option value="group">Groupe</option>
+        <option value="alphabetical">Alphabetique</option>
+      </select>
+    </section>
+    <router-outlet />
+  </div>
 </div>

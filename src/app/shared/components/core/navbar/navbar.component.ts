@@ -6,7 +6,6 @@ import { NavItemComponent } from './nav-item/nav-item.component';
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
-  standalone: true,
   imports: [NavItemComponent],
 })
 export class NavbarComponent {

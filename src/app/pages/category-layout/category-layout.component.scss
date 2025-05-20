@@ -1,0 +1,71 @@
+router-outlet {
+  display: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  background-color: var(--app-neutral-000);
+  border-radius: 4px;
+  border: 1px solid var(--app-border-color);
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 4px;
+    border-width: 1px;
+    padding: 9.5px 9px;
+    gap: 8px;
+
+    input {
+      box-sizing: border-box;
+      width: 100%;
+      border-radius: 4px;
+      border: 1px solid var(--app-border-color);
+      padding: 9.5px 9px;
+      gap: 8px;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+        border: 1px solid var(--app-blue-600);
+      }
+    }
+
+    select {
+      box-sizing: border-box;
+      border-radius: 4px;
+      border-width: 1px;
+      padding: 9.5px 9px;
+      gap: 8px;
+      min-width: 270px;
+      cursor: pointer;
+      border-color: var(--app-border-color);
+
+      &:focus {
+        outline: none;
+        border: 1px solid var(--app-blue-600);
+      }
+
+      option {
+        color: var(--app-neutral-600);
+      }
+
+      option:hover {
+        background-color: var(--app-blue-100);
+      }
+
+      option:focus {
+        background-color: var(--app-blue-100);
+      }
+
+      option:active {
+        background-color: var(--app-blue-100);
+      }
+    }
+  }
+}

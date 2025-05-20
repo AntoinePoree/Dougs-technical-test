@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-// import { rxResource } from '@angular/core/rxjs-interop';
+import { Component, inject } from '@angular/core';
+import { CategoryService } from '../../../shared/services/category.service';
 @Component({
   selector: 'app-category-group',
   standalone: true,
@@ -8,8 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './category-group.component.scss',
 })
 export class CategoryGroupComponent {
-  // public categoryGroup = rxResource({
-  //   defaultValue: [],
-  // });
+  public categoryService = inject(CategoryService);
 }
-
