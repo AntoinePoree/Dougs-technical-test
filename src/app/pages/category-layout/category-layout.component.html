@@ -1,11 +1,14 @@
 <div class="container">
   <div class="card">
     <section class="card-header">
-      <input type="text" placeholder="Rechercher une catégorie" />
-      <select>
-        <option value="all">Tous les groupes de catégories</option>
-        <option value="group">Groupe</option>
-        <option value="alphabetical">Alphabetique</option>
+      <div class="search-container">
+        <input type="text" placeholder="Rechercher une catégorie" (input)="onSearchChange($event)" />
+      </div>
+      <select (change)="onGroupChange($event)">
+        <option value="all">Toutes les catégories</option>
+        @for (option of categoryOptions(); track option.value) {
+          <option value="{{ option.value }}">{{ option.label }}</option>
+        }
       </select>
     </section>
     <router-outlet />

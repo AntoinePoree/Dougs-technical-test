@@ -21,18 +21,37 @@ router-outlet {
     padding: 9.5px 9px;
     gap: 8px;
 
-    input {
-      box-sizing: border-box;
+    .search-container {
+      position: relative;
       width: 100%;
-      border-radius: 4px;
-      border: 1px solid var(--app-border-color);
-      padding: 9.5px 9px;
-      gap: 8px;
-      cursor: pointer;
 
-      &:focus {
-        outline: none;
-        border: 1px solid var(--app-blue-600);
+      &::before {
+        content: '';
+        position: absolute;
+        left: 9px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 16px;
+        background-image: url('/loupe.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        pointer-events: none;
+      }
+
+      input {
+        box-sizing: border-box;
+        width: 100%;
+        border-radius: 4px;
+        border: 1px solid var(--app-border-color);
+        padding: 9.5px 9px 9.5px 32px;
+        gap: 8px;
+        cursor: pointer;
+
+        &:focus {
+          outline: none;
+          border: 1px solid var(--app-blue-600);
+        }
       }
     }
 
@@ -45,6 +64,13 @@ router-outlet {
       min-width: 270px;
       cursor: pointer;
       border-color: var(--app-border-color);
+
+      appearance: none;
+      background-image: url('/arrow-down.svg');
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+      background-size: 12px;
+      padding-right: 28px;
 
       &:focus {
         outline: none;

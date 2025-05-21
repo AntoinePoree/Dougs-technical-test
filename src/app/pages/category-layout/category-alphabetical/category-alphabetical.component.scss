@@ -3,4 +3,19 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 0;
   padding: 0;
+
+  app-category-item {
+    &:nth-child(odd) {
+      border-left: none;
+    }
+
+    &:nth-child(even) {
+      border-right: none;
+      border-left: none;
+    }
+
+    &:nth-child(n+3) {
+      border-top: none;
+    }
+  }
 }

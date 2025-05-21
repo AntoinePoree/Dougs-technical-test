@@ -1,7 +1,10 @@
-@let category = categoryService.categoryMixed();
+@let category = categoryAlphabetical();
 
 <section class="category-alphabetical">
   @for (item of category; track item.id) {
     <app-category-item [category]="item" />
+  } @empty {
+    <div class="no-category">Aucune catégorie trouvée avec ces paramètres.</div>
+    <div class="no-category">Changez votre recherche pour de meilleures résultats.</div>
   }
 </section>

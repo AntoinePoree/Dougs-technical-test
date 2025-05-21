@@ -1,7 +1,47 @@
 :host {
+  display: contents;
+}
+
+.category-item {
   border: 1px solid var(--app-neutral-300);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-02);
-  padding: var(--spacing-02);
+  gap: var(--spacing-03);
+  padding: var(--spacing-05);
+  margin-bottom: -1px;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    z-index: 2;
+    background-color: var(--app-neutral-100);
+  }
+
+  &.selected {
+    background-color: var(--app-blue-100);
+    border-color: var(--app-blue-600);
+    z-index: 2;
+  }
+}
+
+.content {
+  h6 {
+    font-family: 'Eina03-SemiBold';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    margin: 0;
+  }
+
+  p {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--app-neutral-600);
+    font-weight: 400;
+    font-size: 14px;
+    margin: var(--spacing-02) 0 0 0;
+  }
 }

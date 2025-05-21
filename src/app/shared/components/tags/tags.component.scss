@@ -1,0 +1,17 @@
+.tag {
+  box-sizing: border-box;
+  padding: 0 12px;
+  border-radius: 1rem;
+  height: 20px;
+  width: fit-content;
+  color: var(--app-neutral-000);
+
+  span {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    vertical-align: middle;
+  }
+}

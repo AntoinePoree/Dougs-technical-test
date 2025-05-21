@@ -1,1 +1,5 @@
-<p>tags works!</p>
+@let groupItem = group();
+
+<div class="tag" appTagColor [color]="groupItem?.color ?? 'm-blue'">
+  <span>{{ groupItem?.name }}</span>
+</div>

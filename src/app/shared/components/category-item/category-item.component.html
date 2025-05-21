@@ -1,1 +1,9 @@
-{{ category()?.id }}
+@let item = category();
+
+<div class="category-item" [class.selected]="selected" (click)="toggleSelection()">
+  <app-tags [group]="item?.group ?? null" />
+  <div class="content">
+    <h6>{{ item?.wording }}</h6>
+    <p>{{ item?.description }}</p>
+  </div>
+</div>
