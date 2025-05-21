@@ -1,7 +1,8 @@
 import { provideLocationMocks } from '@angular/common/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
+import { RoutesEnum } from '../../../../routes/routes.enum';
+import { NavItemComponent } from './nav-item/nav-item.component';
 import { NavbarComponent } from './navbar.component';
 
 describe('NavbarComponent', () => {
@@ -10,7 +11,7 @@ describe('NavbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavbarComponent],
+      imports: [NavbarComponent, NavItemComponent],
       providers: [provideRouter([]), provideLocationMocks()],
     }).compileComponents();
 
@@ -23,24 +24,38 @@ describe('NavbarComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display two nav items with correct labels', () => {
-    const navItems = fixture.debugElement.queryAll(By.css('app-nav-item'));
+  it('should have routesEnum property', () => {
+    expect(component.routesEnum).toBeDefined();
+    expect(component.routesEnum).toBe(RoutesEnum);
+  });
+
+  it('should render title', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('h4')?.textContent).toContain('Catégories');
+  });
+
+  it('should render two nav items with correct labels', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    const navItems = compiled.querySelectorAll('app-nav-item');
     expect(navItems.length).toBe(2);
-    expect(navItems[0].nativeElement.textContent).toContain('Groupe de catégorie');
-    expect(navItems[1].nativeElement.textContent).toContain('Ordre alphabétique');
+    expect(navItems[0].textContent).toContain('Groupe de catégorie');
+    expect(navItems[1].textContent).toContain('Ordre alphabétique');
   });
 
-  it('should display the correct icons', () => {
-    const images = fixture.debugElement.queryAll(By.css('img'));
+  it('should render nav items with correct router links', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    const navItems = compiled.querySelectorAll('app-nav-item');
+    expect(navItems[0].getAttribute('ng-reflect-router-link')).toBe(RoutesEnum.CATEGORY_GROUP);
+    expect(navItems[1].getAttribute('ng-reflect-router-link')).toBe(
+      RoutesEnum.CATEGORY_ALPHABETICAL,
+    );
+  });
+
+  it('should render images in nav items', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    const images = compiled.querySelectorAll('img');
     expect(images.length).toBe(2);
-    expect(images[0].nativeElement.getAttribute('src')).toContain('stacks.svg');
-    expect(images[1].nativeElement.getAttribute('src')).toContain('sort-alpha.svg');
-  });
-
-  // Si tu utilises routerLink, tu peux tester leur présence :
-  it('should have routerLink attributes on nav items', () => {
-    const navItems = fixture.debugElement.queryAll(By.css('app-nav-item'));
-    expect(navItems[0].attributes['ng-reflect-router-link']).toBeDefined();
-    expect(navItems[1].attributes['ng-reflect-router-link']).toBeDefined();
+    expect(images[0].getAttribute('src')).toBe('/stacks.svg');
+    expect(images[1].getAttribute('src')).toBe('/sort-alpha.svg');
   });
 });
