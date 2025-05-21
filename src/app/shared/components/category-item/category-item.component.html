@@ -1,7 +1,17 @@
 @let item = category();
 
-<div class="category-item" [class.selected]="selected" (click)="toggleSelection()">
-  <app-tags [group]="item?.group ?? null" />
+<div
+  class="category-item"
+  [class.selected]="selected"
+  (click)="toggleSelection()"
+  (keydown.enter)="toggleSelection()"
+  tabindex="0"
+  role="button"
+  [attr.aria-selected]="selected"
+>
+  @if (seeTags()) {
+    <app-tags [group]="item?.group ?? null" />
+  }
   <div class="content">
     <h6>{{ item?.wording }}</h6>
     <p>{{ item?.description }}</p>

@@ -1,0 +1,48 @@
+.category-groups {
+  display: flex;
+  flex-direction: column;
+
+  .group {
+    .group-title {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      margin: 0;
+      padding: var(--spacing-02) var(--spacing-08) var(--spacing-02) var(--spacing-05);
+    }
+
+    .group-content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+
+      app-category-item {
+        &::ng-deep:nth-child(odd) {
+          border-left: none;
+        }
+
+        &::ng-deep:nth-child(even) {
+          border-right: none;
+          border-left: none;
+        }
+
+        &::ng-deep:nth-child(n + 3) {
+          border-top: none;
+        }
+      }
+
+      // Should do an empty state on category item
+      .empty-item {
+        border: 1px solid var(--app-neutral-300);
+        border-left: none;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-03);
+        padding: var(--spacing-05);
+        margin-bottom: -1px;
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+}

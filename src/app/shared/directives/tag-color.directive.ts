@@ -27,8 +27,8 @@ export class TagColorDirective {
           colorName = 'app-red';
         }
 
-        if (!colorName) {
-          colorName = 'app-blue';
+        if (!colorName || colorName === '') {
+          colorName = 'app-yellow';
         }
 
         this.el.nativeElement.style.backgroundColor = `var(--${colorName}-100)`;

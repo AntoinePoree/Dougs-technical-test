@@ -1,3 +1,17 @@
-@let category = categoryService.categoryMixed();
+@let groupedCategories = categoriesByGroups();
 
-{{ category.length }}
+<section class="category-groups">
+  @for (group of groupedCategories; track group.id) {
+    <div class="group">
+      <h3 class="group-title" appTagColor [color]="group.color">{{ group.name }}</h3>
+      <div class="group-content">
+        @for (category of group.categories; track category.id) {
+          <app-category-item [category]="category" [seeTags]="false" />
+        }
+        @if (group.categories.length % 2 !== 0) {
+          <div class="empty-item"></div>
+        }
+      </div>
+    </div>
+  }
+</section>

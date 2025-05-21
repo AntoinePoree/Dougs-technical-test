@@ -5,16 +5,16 @@
   padding: 0;
 
   app-category-item {
-    &:nth-child(odd) {
+    &::ng-deep:nth-child(odd) {
       border-left: none;
     }
 
-    &:nth-child(even) {
+    &::ng-deep:nth-child(even) {
       border-right: none;
       border-left: none;
     }
 
-    &:nth-child(n+3) {
+    &::ng-deep:nth-child(n + 3) {
       border-top: none;
     }
   }

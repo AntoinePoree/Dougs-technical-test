@@ -3,7 +3,7 @@
 }
 
 .category-item {
-  border: 1px solid var(--app-neutral-300);
+  border: 1px solid var(--app-border-color);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-03);
@@ -22,7 +22,7 @@
   &.selected {
     background-color: var(--app-blue-100);
     border-color: var(--app-blue-600);
-    z-index: 2;
+    z-index: 3;
   }
 }
 

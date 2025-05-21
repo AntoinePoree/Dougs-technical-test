@@ -13,6 +13,7 @@ export class CategoryItemComponent {
   public category = input<ICategory | null>(null);
   // Normal, we dont have a "isSelected" who's not an output, but were in "demo" mode
   private isSelected = signal(false);
+  public seeTags = input<boolean>(true);
   public selectedSignal = output<boolean>();
 
   public toggleSelection() {
