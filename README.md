@@ -1,10 +1,23 @@
 # DougsTechnicalTest
+Le but du projet était de pouvoir créer un projet et de correspondre aux maquettes.
+
+# [Voir l'énoncé](public/question/Test%20technique%20front.pdf)
+![test1](public/question/Test%20technique%20front_page-0001.jpg)
+![test1](public/question/Test%20technique%20front_page-0002.jpg)
+
+# [Les maquettes](public/question/Test%20technique%20front.pdf)
+![Voir la maquette 1](public/maquette/Maquette_page-0001.jpg)
+![Voir la maquette 2](public/maquette/Maquette_page-0002.jpg)
+![Voir la maquette 3](public/maquette/Maquette_page-0003.jpg)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.6.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+A backend server is linked, have a look to the [readme](backend/technical-test/readme.md)
 
 ## Code scaffolding
 
