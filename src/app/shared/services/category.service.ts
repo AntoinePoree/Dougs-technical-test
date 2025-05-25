@@ -10,11 +10,11 @@ import { ICategory } from '../interfaces/category.interface';
 export class CategoryService {
   private http = inject(HttpClient);
 
-  private getAllCategories(): Observable<ICategory[]> {
+  public getAllCategories(): Observable<ICategory[]> {
     return this.http.get<ICategory[]>('/all-categories');
   }
 
-  private getVisibleCategories(): Observable<ICategory[]> {
+  public getVisibleCategories(): Observable<ICategory[]> {
     return this.http.get<ICategory[]>('/visible-categories');
   }
 

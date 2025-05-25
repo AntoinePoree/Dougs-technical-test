@@ -10,8 +10,10 @@ export class TagColorDirective {
 
   constructor() {
     effect(() => {
+      let colorName = 'app-yellow'; // Default color
+
       if (this.color()) {
-        let colorName = this.color().replace('m-', 'app-');
+        colorName = this.color().replace('m-', 'app-');
 
         // We dont have color for pink, purple and green
         // So we remapped it to another color waiting for designer to act something
@@ -26,14 +28,10 @@ export class TagColorDirective {
         if (colorName.includes('pink')) {
           colorName = 'app-red';
         }
-
-        if (!colorName || colorName === '') {
-          colorName = 'app-yellow';
-        }
-
-        this.el.nativeElement.style.backgroundColor = `var(--${colorName}-100)`;
-        this.el.nativeElement.style.color = `var(--${colorName}-600)`;
       }
+
+      this.el.nativeElement.style.backgroundColor = `var(--${colorName}-100)`;
+      this.el.nativeElement.style.color = `var(--${colorName}-600)`;
     });
   }
 }
