@@ -1,0 +1,23 @@
+
+$colors: (
+  'yellow': 'yellow',
+  'green': 'yellow',
+  'red': 'red',
+  'purple': 'red',
+  'blue': 'blue',
+  'pink': 'blue',
+);
+
+@each $color, $value in $colors {
+  .m-#{$color} {
+    background-color: var(--app-#{$value}-100);
+    color: var(--app-#{$value}-600);
+  }
+
+    .app-#{$color} {
+    background-color: var(--app-#{$value}-100);
+    color: var(--app-#{$value}-600);
+  }
+
+
+}

@@ -1,5 +1,5 @@
 @let groupItem = group();
 
-<div class="tag" appTagColor [color]="groupItem?.color ?? 'app-yellow'">
+<div class="tag" [ngClass]="groupItem?.color ?? 'm-yellow'">
   <span>{{ groupItem?.name }}</span>
 </div>

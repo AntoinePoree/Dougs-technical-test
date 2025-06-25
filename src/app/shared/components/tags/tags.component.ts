@@ -1,11 +1,11 @@
+import { NgClass } from '@angular/common';
 import { Component, input } from '@angular/core';
-import { TagColorDirective } from '../../directives/tag-color.directive';
 import { IGroup } from '../../interfaces/category.interface';
 
 @Component({
   selector: 'app-tags',
   standalone: true,
-  imports: [TagColorDirective],
+  imports: [NgClass],
   templateUrl: './tags.component.html',
   styleUrl: './tags.component.scss',
 })

@@ -1,4 +1,4 @@
-@let category = categoryAlphabetical();
+@let category = categoryService.categoryAlphabeticalFiltered();
 
 <section class="category-alphabetical">
   @for (item of category; track item.id) {

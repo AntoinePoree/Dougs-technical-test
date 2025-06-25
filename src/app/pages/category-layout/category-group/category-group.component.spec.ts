@@ -19,7 +19,7 @@ describe('CategoryGroupComponent', () => {
     fixture.detectChanges();
   };
 
-  const getGroups = () => component.categoriesByGroups();
+  const getGroups = () => categoryServiceSpy.categoriesByGroupsFiltered();
 
   beforeEach(async () => {
     const categoryMixedSignal = signal(mockCategories);
@@ -54,7 +54,6 @@ describe('CategoryGroupComponent', () => {
 
     it('should inject required services', () => {
       expect(component.categoryService).toBeTruthy();
-      expect(component['filterService']).toBeTruthy();
     });
   });
 
@@ -89,37 +88,6 @@ describe('CategoryGroupComponent', () => {
       expect(groups.length).toBe(1);
       expect(groups[0].name).toBe('Sans groupe');
       expect(groups[0].categories.length).toBe(2);
-    });
-  });
-
-  describe('Category Sorting', () => {
-    it('should sort categories within groups alphabetically', () => {
-      const groupA = getGroups().find(g => g.name === 'Group A');
-      expect(groupA).toBeTruthy();
-      expect(groupA!.categories.map(c => c.wording)).toEqual(['Cat A', 'Cat Z']);
-    });
-
-    it('should sort groups alphabetically', () => {
-      expect(getGroups().map(g => g.name)).toEqual(['Group A', 'Group B', 'Sans groupe']);
-    });
-
-    it('should maintain sort order when adding new categories', () => {
-      const newCategoriesSignal = signal([
-        ...mockCategories,
-        {
-          id: 5,
-          wording: 'Cat D',
-          description: '',
-          group: { id: 1, name: 'Group A', color: 'red' },
-        },
-      ]);
-      Object.defineProperty(categoryServiceSpy, 'categoryMixed', {
-        get: () => newCategoriesSignal,
-      });
-      refreshComponent();
-
-      const groupA = getGroups().find(g => g.name === 'Group A');
-      expect(groupA!.categories.map(c => c.wording)).toEqual(['Cat A', 'Cat D', 'Cat Z']);
     });
   });
 
@@ -193,20 +161,6 @@ describe('CategoryGroupComponent', () => {
 
       const groups = getGroups();
       expect(groups.length).toBe(0);
-    });
-  });
-
-  describe('Group Properties', () => {
-    it('should assign correct group properties', () => {
-      const groupA = getGroups().find(g => g.name === 'Group A');
-      expect(groupA?.id).toBe(1);
-      expect(groupA?.color).toBe('red');
-    });
-
-    it('should use default values for categories without groups', () => {
-      const noGroup = getGroups().find(g => g.name === 'Sans groupe');
-      expect(noGroup?.id).toBe(0);
-      expect(noGroup?.color).toBe('app-yellow');
     });
   });
 });

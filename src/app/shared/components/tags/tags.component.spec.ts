@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TagColorDirective } from '../../directives/tag-color.directive';
 import { mockGroup1, mockGroup2 } from '../../mocks/category.mock';
 import { TagsComponent } from './tags.component';
 
@@ -9,7 +8,7 @@ describe('TagsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TagsComponent, TagColorDirective],
+      imports: [TagsComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TagsComponent);

@@ -13,7 +13,7 @@
     <app-tags [group]="item?.group ?? null" />
   }
   <div class="content">
-    <h6>{{ item?.wording }}</h6>
-    <p>{{ item?.description }}</p>
+    <h6 [innerHTML]="item?.wording"></h6>
+    <p [innerHTML]="item?.description"></p>
   </div>
 </div>

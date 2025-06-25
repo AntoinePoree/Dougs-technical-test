@@ -1,9 +1,9 @@
-@let groupedCategories = categoriesByGroups();
+@let groupedCategories = categoryService.categoriesByGroupsFiltered();
 
 <section class="category-groups">
   @for (group of groupedCategories; track group.id) {
     <div class="group">
-      <h3 class="group-title" appTagColor [color]="group.color">{{ group.name }}</h3>
+      <h3 class="group-title" [ngClass]="group.color">{{ group.name }}</h3>
       <div class="group-content">
         @for (category of group.categories; track category.id) {
           <app-category-item [category]="category" [seeTags]="false" />

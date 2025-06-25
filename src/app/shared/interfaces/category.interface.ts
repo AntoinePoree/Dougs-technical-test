@@ -10,3 +10,7 @@ export interface ICategory {
   description: string | null;
   group?: IGroup;
 }
+
+export interface IGroupedCategory extends IGroup {
+  categories: ICategory[];
+}

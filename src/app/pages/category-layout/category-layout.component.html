@@ -1,17 +1,17 @@
 <div class="container">
   <div class="card">
-    <section class="card-header">
+    <form class="card-header" [formGroup]="filterForm">
       <!-- Input and select are fast made, but a component with control value accessor would be better -->
       <div class="search-container">
-        <input type="text" placeholder="Rechercher une catégorie" (input)="onSearchChange($event)" />
+        <input type="text" placeholder="Rechercher une catégorie" formControlName="search" />
       </div>
-      <select (change)="onGroupChange($event)">
+      <select formControlName="group">
         <option value="all">Toutes les catégories</option>
         @for (option of categoryOptions(); track option.value) {
           <option value="{{ option.value }}">{{ option.label }}</option>
         }
       </select>
-    </section>
+    </form>
     <router-outlet />
   </div>
 </div>

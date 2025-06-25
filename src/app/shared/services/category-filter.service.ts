@@ -1,4 +1,4 @@
-import { Injectable, computed, signal } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +11,7 @@ export class CategoryFilterService {
 
   public setSelectedGroup = (group: string) => this.selectedGroup.set(group);
 
-  public getSearchText = computed(() => this.searchText());
+  public getSearchText = this.searchText.asReadonly();
 
-  public getSelectedGroup = computed(() => this.selectedGroup());
+  public getSelectedGroup = this.selectedGroup.asReadonly();
 }
